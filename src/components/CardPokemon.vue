@@ -2,10 +2,10 @@
   <v-card class="mx-auto" max-width="344" outlined>
     <v-list-item three-line>
       <v-list-item-content>
-        <v-list-item-title class="headline mb-3 text-uppercase" >{{ pokemon ? pokemon.name : 0 }}</v-list-item-title>
+        <v-list-item-title class="headline mb-3 text-capitalize">{{ pokemon ? pokemon.name : 0 }}</v-list-item-title>
         <v-list-item-subtitle>Alto: {{ pokemon ? pokemon.height : 0 }} cm</v-list-item-subtitle>
         <v-list-item-subtitle>Peso: {{ pokemon ? pokemon.weight : 0}} Kg</v-list-item-subtitle>
-        <v-list-item-subtitle>Tipos: {{ pokemon.types ? getTypes(pokemon.types) : 'No tiene'  }}</v-list-item-subtitle>
+        <v-list-item-subtitle>Tipos: {{ pokemon.types ? getTypes(pokemon.types) : 'No tiene' }}</v-list-item-subtitle>
       </v-list-item-content>
 
       <v-avatar size="82px">
@@ -45,3 +45,19 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import "../plugins/preset/variables.scss";
+.theme--dark {
+  .v-card {
+    background-color: $gris-pantano;
+    color: $gris-delfin;
+    --outlined {
+      border: thin solid $rojo-cereza;
+    }
+  }
+
+  .v-list-item__title {
+    color: $naranja-fuego;
+  }
+}
+</style>

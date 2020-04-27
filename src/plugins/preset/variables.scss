@@ -1,0 +1,39 @@
+// preset/variables.scss
+
+// Shrine specific variables
+$shrine-chip-border-radius: 4px;
+$shrine-chip-border: thin solid black;
+$shrine-chip-font-weight: 900;
+$shrine-chip-padding: 0 8px;
+
+// Preset variables
+$border-radius-root: 6px;
+$headings: (
+  'h1': (
+    'letter-spacing': 0
+  )
+);
+$material-dark: (
+  'cards': #3f4443,
+  'text': (
+    'primary': #d2da00,
+    'secondary': grey
+  )
+);
+//Color
+
+$gris-delfin: #d1d1d1;
+$gris-niebla: #f9f9f9;
+$gris-pantano: #3f4443;
+$naranja-amanecer: #ff7f32;
+$naranja-melon: #ffe5d6;
+$naranja-fuego: #e35906;
+$naranja-cuarzo: #f7e6de;
+$rojo-cereza: #c8102e;
+$verde-limon: #d2da00;
+$verde-lima: #b2de74;
+$verde-pasto: #698b39;
+$verde-pera: #86b83f;
+$verde-pistache: #9cc85f;
+$verde-cuarzo: #d9e2ce;
+$verde-crema: #f5f9ef;

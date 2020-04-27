@@ -3,7 +3,7 @@
     <v-navigation-drawer v-model="drawer" app clipped color="grey darken-4">
       <v-list dense>
         <router-link to="/" class="router-link-custom">
-          <v-list-item link>
+          <v-list-item>
             <v-list-item-action>
               <v-icon>mdi-view-dashboard</v-icon>
             </v-list-item-action>
@@ -21,7 +21,7 @@
         <span class="hidden-sm-and-down">Pokemon</span>
       </v-toolbar-title>
       <v-spacer />
-      <v-btn icon large>
+      <v-btn icon link large href="https://github.com/Lucero07/pokemon-vue">
         <v-avatar size="32px">
           <v-img src="./assets/pokebola.png" alt="Github" />
         </v-avatar>
