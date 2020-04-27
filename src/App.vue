@@ -1,32 +1,66 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+    <v-navigation-drawer v-model="drawer" app clipped color="grey darken-4">
+      <v-list dense>
+        <router-link to="/" class="router-link-custom">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>mdi-view-dashboard</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Dashboard</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </router-link>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app dark>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
+        <span class="hidden-sm-and-down">Pokemon</span>
+      </v-toolbar-title>
+      <v-spacer />
+      <v-btn icon large>
+        <v-avatar size="32px">
+          <v-img src="./assets/pokebola.png" alt="Github" />
+        </v-avatar>
+      </v-btn>
+    </v-app-bar>
+
+    <v-content>
+      <v-container fluid>
+        <router-view :search="search"/>
+      </v-container>
+    </v-content>
+
+    <v-footer app>
+      <span>&copy; 2020, Lucero Ramos</span>
+    </v-footer>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  props: {
+    source: String
+  },
+  data: () => ({
+    drawer: null,
+    search: ""
+  }),
+  created() {
+    this.$vuetify.theme.dark = true;
+  },
+  methods: {
+    getPokemon() {
+      console.log(this.search)
     }
   }
+};
+</script>
+<style lang="scss" scoped>
+.router-link-custom {
+  text-decoration: none;
 }
 </style>
