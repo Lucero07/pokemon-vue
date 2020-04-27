@@ -50,14 +50,14 @@ export default {
     search: ""
   }),
   created() {
-    this.$vuetify.theme.dark = true;
+    this.$vuetify.theme.dark = true
   },
   methods: {
     getPokemon() {
       console.log(this.search)
     }
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .router-link-custom {
