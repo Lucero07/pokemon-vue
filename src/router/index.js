@@ -17,7 +17,7 @@ const routes = [
     },
     children: [
       {
-        path: "dashboard",
+        path: "/",
         name: "pokemon-search",
         component: Home,
 
