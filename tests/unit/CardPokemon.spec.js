@@ -1,13 +1,19 @@
 import { expect } from 'chai'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount, createLocalVue } from '@vue/test-utils'
 import CardPokemon from '@/components/CardPokemon.vue'
+import VueRouter from 'vue-router'
 
-describe('CardPokemon.vue', () => {
-  it('renders props.pokemon when passed', () => {
-    const pokemon = {}
-    const wrapper = shallowMount(CardPokemon, {
-      propsData: { pokemon }
-    })
-    expect(wrapper.text()).to.include(pokemon)
-  })
+const localVue = createLocalVue()
+localVue.use(VueRouter)
+const router = new VueRouter()
+
+
+
+shallowMount(CardPokemon, {
+  stubs: ['router-link', ':id/detail'],
+  propsData: {
+    pokemon: {}
+  }
 })
+
+

@@ -7,12 +7,12 @@
             <v-col cols="12" sm="6">
               <v-list-item three-line>
                 <v-list-item-content>
-                  <v-list-item-title class="headline mb-3 text-uppercase">{{ pokemon.name }}</v-list-item-title>
-                  <v-list-item-subtitle>Alto: {{ pokemon.height }} cm</v-list-item-subtitle>
-                  <v-list-item-subtitle>Peso: {{pokemon.weight}} Kg</v-list-item-subtitle>
-                  <v-list-item-subtitle>Tipos: {{ pokemon.types ? getTypes(pokemon.types) : 'No tiene' }}</v-list-item-subtitle>
-                  <v-list-item-subtitle>Habilidades: {{ pokemon.abilities ? getAbilities(pokemon.abilities) : 'No tiene' }}</v-list-item-subtitle>
-                  <v-list-item-subtitle>Experiencia: {{ pokemon.base_experience}}</v-list-item-subtitle>
+                  <v-list-item-title class="headline mb-3 text-capitalize">{{ pokemon.name }}</v-list-item-title>
+                  <v-list-item-subtitle>Alto: <b>{{ pokemon.height }} cm</b></v-list-item-subtitle>
+                  <v-list-item-subtitle>Peso: <b>{{pokemon.weight}} Kg</b></v-list-item-subtitle>
+                  <v-list-item-subtitle>Tipos: <b>{{ pokemon.types ? getTypes(pokemon.types) : 'No tiene' }}</b></v-list-item-subtitle>
+                  <v-list-item-subtitle>Habilidades: <b>{{ pokemon.abilities ? getAbilities(pokemon.abilities) : 'No tiene' }}</b></v-list-item-subtitle>
+                  <v-list-item-subtitle>Experiencia: <b>{{ pokemon.base_experience}}</b></v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
             </v-col>
@@ -43,14 +43,9 @@
   </v-row>
 </template>
 <script>
-// @ is an alias to /src
-import CardPokemon from "@/components/CardPokemon.vue"
 
 export default {
   name: "Detail",
-  components: {
-    CardPokemon
-  },
   data: () => ({
     model: null,
     pokemon: {},
@@ -88,3 +83,20 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import "../plugins/preset/variables.scss";
+.theme--dark {
+  .v-card {
+    background-color: $gris-pantano;
+    color: $gris-delfin;
+  }
+
+  .v-list-item__title {
+    color: $naranja-fuego;
+	}
+
+	.v-list-item__subtitle {
+    color: $naranja-melon !important;
+  }
+}
+</style>
