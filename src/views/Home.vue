@@ -10,7 +10,7 @@
 
 <script>
 // @ is an alias to /src
-import CardPokemon from "@/components/CardPokemon.vue";
+import CardPokemon from "@/components/CardPokemon.vue"
 
 export default {
   name: "Home",
@@ -31,16 +31,16 @@ export default {
   mounted() {
     console.log(this.props)
     for (let i = 1; i < 21; i++) {
-      this.initialize(i);
+      this.initialize(i)
     }
   },
   methods: {
     initialize(pokemonId) {
       this.loading = true
       this.$store.dispatch("GET_ALL_POKEMONS", pokemonId).then(response => {
-        this.defaultPokemon.push(response);
+        this.defaultPokemon.push(response)
       }).catch( error => this.error = error)
     },
   }
-};
+}
 </script>
