@@ -1,28 +1,34 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import { preset } from 'vue-cli-plugin-vuetify-preset-rally/preset'
 
 Vue.use(Vuetify)
-
-export default new Vuetify({
+const options = {
   theme: {
-      options: {
-        customProperties: true,
-      },
+    options: {
+      customProperties: true,
+    },
     themes: {
       dark: {
         primary: '#e6ab04',
         secondary: '#58585a',
-        accent: '#82B1FF',
-        error: '#FF5252',
+        accent: '#e35906',
+        error: '#c8102e',
         info: '#2196F3',
         success: '#e6ab04',
         warning: '#FFC107',
         backgroundTitle: '#FFC107'
       },
     },
-    headline:{
+    headline: {
       color: 'pink'
     }
-  },
+  }
+}
+
+export default new Vuetify({
+  preset,
+  rtl: false,
+  ...options,
 })
